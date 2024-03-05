@@ -1,0 +1,102 @@
+class Person:
+    def __init__(self, ID, name):
+        self.ID = ID
+        self.name = name
+
+    def display_info(self):
+        print("ID:", self.ID)
+        print("Name:", self.name)
+
+
+class Student(Person):
+    def __init__(self, ID, name):
+        super().__init__(ID, name)
+        self.sport_marks = None
+
+    def display_info(self):
+        super().display_info()
+        if self.sport_marks is not None:
+            print("Sport Marks:", self.sport_marks)
+
+    def enter_sport_marks(self, marks):
+        self.sport_marks = marks
+
+    def display_result(self):
+        print("Result:")
+        self.display_info()
+
+def input_student_info():
+    ID = int(input("Enter ID: "))
+    name = input("Enter name: ")
+    return ID, name
+
+
+def input_sport_marks():
+    marks = int(input("Enter sport marks: "))
+    return marks
+
+n = int(input("Enter the number of students: "))
+students = []
+
+for i in range(n):
+    print("\nEnter details for student", i+1)
+    ID, name = input_student_info()
+    student = Student(ID, name)
+    sport_marks = input_sport_marks()
+    student.enter_sport_marks(sport_marks)
+    students.append(student)
+
+for i, student in enumerate(students):
+    print("\nResults for student", i+1)
+    student.display_result()
+class Person:
+    def __init__(self, ID, name):
+        self.ID = ID
+        self.name = name
+
+    def display_info(self):
+        print("ID:", self.ID)
+        print("Name:", self.name)
+
+
+class Student(Person):
+    def __init__(self, ID, name):
+        super().__init__(ID, name)
+        self.sport_marks = None
+
+    def display_info(self):
+        super().display_info()
+        if self.sport_marks is not None:
+            print("Sport Marks:", self.sport_marks)
+
+    def enter_sport_marks(self, marks):
+        self.sport_marks = marks
+
+    def display_result(self):
+        print("Result:")
+        self.display_info()
+
+def input_student_info():
+    ID = int(input("Enter ID: "))
+    name = input("Enter name: ")
+    return ID, name
+
+
+def input_sport_marks():
+    marks = int(input("Enter sport marks: "))
+    return marks
+
+n = int(input("Enter the number of students: "))
+students = []
+
+for i in range(n):
+    print("\nEnter details for student", i+1)
+    ID, name = input_student_info()
+    student = Student(ID, name)
+    sport_marks = input_sport_marks()
+    student.enter_sport_marks(sport_marks)
+    students.append(student)
+
+for i, student in enumerate(students):
+    print("\nResults for student", i+1)
+    student.display_result()
